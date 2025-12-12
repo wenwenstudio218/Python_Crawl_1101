@@ -25,7 +25,7 @@ async def main():
             config=run_config
         )
 
-    print(result.markdown)
+        print(result.markdown)
 
 
 if __name__ == "__main__":
