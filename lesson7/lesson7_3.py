@@ -64,11 +64,12 @@ async def main():
 
     strategy = JsonCssExtractionStrategy(schema)
 
-    async with AsyncWebCrawler() as crawler:
-        run_config = CrawlerRunConfig(
+    run_config = CrawlerRunConfig(
             cache_mode = CacheMode.BYPASS,
             extraction_strategy= strategy
         )
+
+    async with AsyncWebCrawler() as crawler:
         result = await crawler.arun(
             url = f"raw://{html}",
             config = run_config
